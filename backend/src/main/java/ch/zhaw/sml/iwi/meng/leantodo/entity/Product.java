@@ -19,7 +19,7 @@ public class Product {
     private String name;
     private String vorname;
     private String description;
-    private String price;
+    private int price;
     //private picture? picture;
 
 
@@ -39,6 +39,14 @@ public class Product {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getVorname() {
         return vorname;
     }
@@ -47,11 +55,12 @@ public class Product {
         this.vorname = vorname;
     }
 
-    public String getPrice() {
+
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
