@@ -1,4 +1,4 @@
-5package ch.zhaw.sml.iwi.meng.leantodo;
+package ch.zhaw.sml.iwi.meng.leantodo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
