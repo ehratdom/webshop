@@ -38,8 +38,8 @@ public class ShoppingCart {
         this.totalPrice = totalPrice;
     }
 
-    public String getAmount() {
-        return owner;
+    public int getAmount() {
+        return amount;
     }
 
     public void setAmount(int amount) {
