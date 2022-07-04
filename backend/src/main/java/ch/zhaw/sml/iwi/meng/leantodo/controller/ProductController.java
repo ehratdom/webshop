@@ -15,6 +15,8 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepository;
 
-    
+    public List<Product> listAllProducts(String name) {
+        return productRepository.findAll();
+    }
     
 }
