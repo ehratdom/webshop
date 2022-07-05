@@ -22,7 +22,7 @@ public class User {
     private String passwordHash;
 
     @OneToOne
-    private ShoppingCart shoppingCart = new ShoppingCart();
+    private ShoppingCart shoppingCart;
 
     @ManyToMany
     private List<Role> roles = new ArrayList<>();
@@ -67,6 +67,10 @@ public class User {
      */
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
     }
 
 
