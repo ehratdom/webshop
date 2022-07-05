@@ -1,17 +1,26 @@
 <template>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{{ products }}</ion-card-title>
-    </ion-card-header>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Produkte</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true">
+      <ion-card :key="product" v-for="product in products">
+        <ion-card-header>
+          <ion-card-title>{{ product.name }}</ion-card-title>
+        </ion-card-header>
 
-    <ion-card-content> Keep close to Nature's heart. </ion-card-content>
+        <ion-card-content> kostet {{ product.price }} </ion-card-content>
 
-    <ion-img
-      src="https://media-exp1.licdn.com/dms/image/C4E03AQGeQE40cqtcpg/profile-displayphoto-shrink_200_200/0/1652624287356?e=1658361600&v=beta&t=oEZxHOsVmvFzShttWhaOgFyXzPw6Xm9jPp1jmmjNPTI"
-    ></ion-img>
+        <ion-img style="width: 100px; height: 100px;"
+          :src="product.img"
+        ></ion-img>
 
-    <ion-button color="success">Add to cart</ion-button>
-  </ion-card>
+        <ion-button color="success">Add to cart</ion-button>
+      </ion-card>
+    </ion-content>
+  </ion-page>
 </template>
 
 <script>
@@ -58,8 +67,12 @@ export default defineComponent({
         withCredentials: true,
       };
       try {
-        const response = await axios.get("http://localhost:8080/api/products", config);
+        const response = await axios.get(
+          "http://localhost:8080/api/products",
+          config
+        );
         this.products = response.data;
+        console.log(this.products)
       } catch (error) {
         return error;
       }
