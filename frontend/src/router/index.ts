@@ -25,13 +25,13 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Todo.vue')
       },
       {
+        path: 'Products',
+        component: () => import('@/views/Products.vue')
+      },
+      {
         path: 'projects',
         component: () => import('@/views/Projects.vue')
       },
-      {
-        path: 'timerecord',
-        component: () => import('@/views/Timerecord.vue')
-      }
     ]
   }
 ]
