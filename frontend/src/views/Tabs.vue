@@ -6,11 +6,14 @@
         <ion-tab-button tab="todo" href="/tabs/todo">
           <ion-icon :icon="flash" />
           <ion-label>Todo</ion-label>
+          
         </ion-tab-button>
-          <ion-tab-button tab="products" href="/tabs/products">
-          <ion-icon :icon="flash" />
-          <ion-label>Products</ion-label>
+
+        <ion-tab-button tab="products" href="/tabs/products">
+          <ion-icon :icon="shirt" />
+          <ion-label>Produkte</ion-label>
         </ion-tab-button>
+
         <ion-tab-button tab="projects" href="/tabs/projects">
           <ion-icon :icon="cart" />
           <ion-label>Cart</ion-label>
@@ -23,7 +26,7 @@
 
 <script lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { flash, cart, send } from 'ionicons/icons';
+import { flash, cart, send, shirt } from 'ionicons/icons';
 
 export default {
   name: 'Tabs',
@@ -33,6 +36,7 @@ export default {
       flash, 
       cart, 
       send,
+      shirt,
     }
   }
 }
