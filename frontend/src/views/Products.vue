@@ -6,49 +6,64 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
-      <ion-card :key="product" v-for="product in products">
-        <ion-card-header>
-          <ion-card-title>{{ product.name }}</ion-card-title>
-        </ion-card-header>
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Produkte</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-list>
+        <ion-row>
+          <ion-item :key="product" v-for="product in products">
+            <ion-grid>
+              <ion-col>
+                {{ product.name }}
+              </ion-col>
 
-        <ion-card-content> kostet {{ product.price }} </ion-card-content>
+              <ion-img
+                style="width: 500px; height: 500px"
+                :src="product.img"
+              ></ion-img>
 
-        <ion-img style="width: 100px; height: 100px;"
-          :src="product.img"
-        ></ion-img>
-
-        <ion-button color="success">Add to cart</ion-button>
-      </ion-card>
+              <ion-button color="success">Add to cart</ion-button>
+            </ion-grid>
+          </ion-item>
+        </ion-row>
+      </ion-list>
     </ion-content>
   </ion-page>
 </template>
 
-<script>
+<script lang="ts">
 import {
-  IonCard,
-  IonCardContent,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonIcon,
+  IonTitle,
+  IonHeader,
+  IonCol,
+  IonRow,
+  IonGrid,
   IonItem,
-  IonLabel,
+  IonList,
+  IonButton,
 } from "@ionic/vue";
-import { pin, walk, warning, wifi, wine } from "ionicons/icons";
+//import { pin, walk, warning, wifi, wine } from "ionicons/icons";
 import { defineComponent } from "vue";
 import axios from "axios";
+import { useProducts } from "@/composables/useProducts";
 
 export default defineComponent({
-  Components: {
-    IonCard,
-    IonCardContent,
-    IonCardSubtitle,
-    IonCardTitle,
-    IonIcon,
+  name: "Product",
+  components: {
+    IonTitle,
+    IonHeader,
+    IonCol,
+    IonRow,
+    IonGrid,
     IonItem,
-    IonLabel,
+    IonList,
+    IonButton,
   },
   setup() {
-    return { pin, walk, warning, wifi, wine };
+    //const { getProducts } = useProducts();
+    //return { getProducts };
   },
 
   data() {
@@ -72,7 +87,6 @@ export default defineComponent({
           config
         );
         this.products = response.data;
-        console.log(this.products)
       } catch (error) {
         return error;
       }

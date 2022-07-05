@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { flash, cart, send, shirt } from 'ionicons/icons';
+import { flash, cart, shirt } from 'ionicons/icons';
 
 export default {
   name: 'Tabs',
@@ -35,7 +35,6 @@ export default {
     return {
       flash, 
       cart, 
-      send,
       shirt,
     }
   }
