@@ -14,7 +14,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    public List<User> listUser() {
+    public List<User> listAllUsers() {
         return userRepository.findAll();
     }
     
