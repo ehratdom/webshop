@@ -34,7 +34,7 @@ public class ShoppingCart {
         return totalPrice;
     }
 
-    public void setTotalPrice(String title) {
+    public void setTotalPrice(String totalPrice) {
         this.totalPrice = totalPrice;
     }
 
