@@ -8,6 +8,8 @@
       Keep close to Nature's heart.
     </ion-card-content>
 
+  <ion-img :src="item.src"></ion-img>
+
     <ion-button
       color="success">Add to cart</ion-button>
   </ion-card>
