@@ -11,7 +11,6 @@ import ch.zhaw.sml.iwi.meng.leantodo.entity.ToDoRepository;
 @Component
 public class ToDoController {
 
-
     @Autowired
     private ToDoRepository toDoRepository;
 

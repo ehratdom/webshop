@@ -11,7 +11,6 @@ import ch.zhaw.sml.iwi.meng.leantodo.entity.ProductRepository;
 @Component
 public class ProductController {
 
-
     @Autowired
     private ProductRepository productRepository;
 

@@ -10,7 +10,6 @@ import ch.zhaw.sml.iwi.meng.leantodo.entity.ShoppingCartRepository;
 
 @Component
 public class ShoppingCartController {
-    
 
     @Autowired
     private ShoppingCartRepository shoppingCartRepository;

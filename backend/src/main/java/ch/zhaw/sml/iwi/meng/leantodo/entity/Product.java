@@ -17,7 +17,6 @@ public class Product {
     private Long id;
 
     private String name;
-    private String vorname;
     private String description;
     private int price;
     //private picture? picture;
@@ -46,15 +45,6 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public String getVorname() {
-        return vorname;
-    }
-
-    public void setVorname(String vorname) {
-        this.vorname = vorname;
-    }
-
 
     public int getPrice() {
         return price;

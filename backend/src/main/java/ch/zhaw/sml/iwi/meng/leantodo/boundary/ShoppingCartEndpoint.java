@@ -10,10 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import ch.zhaw.sml.iwi.meng.leantodo.controller.ToDoController;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.ToDo;
+import ch.zhaw.sml.iwi.meng.leantodo.controller.ShoppingCartController;
+import ch.zhaw.sml.iwi.meng.leantodo.entity.ShoppingCart;
 
 @RestController
 public class ShoppingCartEndpoint {
+
+    @Autowired
+    private ShoppingCartController ShoppingCartController;
+
     
 }
