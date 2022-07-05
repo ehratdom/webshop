@@ -1,92 +1,44 @@
 <template>
-  <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Products</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Products</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-list>
-        <ion-item :key="todo" v-for="todo in todos">
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                {{ todo.title }}
-              </ion-col>
-              <ion-col>
-                <ion-button
-                  color="danger"
-                  v-if="!todo.done && !todo.archived"
-                  @click="finishTodo(todo)"
-                  >Finish</ion-button
-                >
-                <ion-button
-                  color="success"
-                  v-if="todo.done && !todo.archived"
-                  @click="archiveTodo(todo)"
-                  >Archive</ion-button
-                >
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
-      </ion-list>
-      <ion-item>
-        <ion-input
-          type="text"
-          placeholder="New Todo Title"
-          v-model="newTodo.title"
-        ></ion-input>
-      </ion-item>
-      <div padding>
-        <ion-button @click="addTodo()">Add New ToDo</ion-button>
-      </div>
-    </ion-content>
-  </ion-page>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Keep close to Nature's heart.
+    </ion-card-content>
+
+    <ion-button
+      color="success">Add to cart</ion-button>
+  </ion-card>
 </template>
 
-<script lang="ts">
+<script>
 import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonCol,
-  IonRow,
-  IonGrid,
+  IonCard,
+  IonCardContent,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonIcon,
   IonItem,
-  IonList,
-  IonButton,
-  IonInput,
+  IonLabel,
 } from "@ionic/vue";
-import { useTodos } from "@/composables/useTodos";
+import { pin, walk, warning, wifi, wine } from "ionicons/icons";
+import { defineComponent } from "vue";
 
-export default {
-  name: "Todo",
-  components: {
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonPage,
-    IonCol,
-    IonRow,
-    IonGrid,
+export default defineComponent({
+  Components: {
+    IonCard,
+    IonCardContent,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonIcon,
     IonItem,
-    IonList,
-    IonButton,
-    IonInput,
+    IonLabel,
   },
   setup() {
-    const { newTodo, todos, getTodos, addTodo, finishTodo, archiveTodo } = useTodos();
-
-    return { newTodo, todos, getTodos, addTodo, finishTodo, archiveTodo };
+    return { pin, walk, warning, wifi, wine };
+    
   },
-};
+});
 </script>
