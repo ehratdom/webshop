@@ -18,8 +18,8 @@ public class ShoppingCart {
 
     private String totalPrice;
 
-    //@OneToMany
-    //private List<Product> products = new ArrayList<>();
+    @OneToMany(mappedBy="shoppingCartFK")
+    private List<ProductInCart> products;
 
     public Long getId() {
         return id;
@@ -37,12 +37,12 @@ public class ShoppingCart {
         this.totalPrice = totalPrice;
     }
 
-    /*public List<Product> getProducts() {
+    public List<ProductInCart> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(List<ProductInCart> products) {
         this.products = products;
-    }*/
+    }
     
 }
