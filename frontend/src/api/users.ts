@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { API_ROOT } from "@/config/development";
-import { Product } from '@/model/user';
+import { User } from '@/model/user';
 
-export async function getSCfromUser(): Promise <Product[]> {
+export async function getSCfromUser(): Promise <User[]> {
     const config = {
         withCredentials: true,
     } 
