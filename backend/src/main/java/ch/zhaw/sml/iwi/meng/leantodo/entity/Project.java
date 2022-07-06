@@ -17,7 +17,7 @@ public class Project {
     private Long id;
 
     private String title;
-
+    private String img;
     private String owner;
 
     @OneToMany

@@ -25,7 +25,7 @@ public class UserEndpoint {
         return "{\"user\": \"" + principal.getName() + "\"} ";
     }*/
 
-    @RequestMapping(path = "/api/me", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(path = "/api/user", method = RequestMethod.GET, produces = "application/json")
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
     public List<User> me(Principal principal) {
         return userController.listAllUsers();
