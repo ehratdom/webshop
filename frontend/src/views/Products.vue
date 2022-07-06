@@ -12,22 +12,25 @@
         </ion-toolbar>
       </ion-header>
       <ion-list>
-        <ion-row>
-          <ion-item :key="product" v-for="product in products">
-            <ion-grid>
+        <ion-item :key="product" v-for="product in products">
+          <ion-grid>
+            <ion-row>
               <ion-col>
                 {{ product.name }}
+                <ion-col>
+                  <ion-img :src="product.img"></ion-img>
+                </ion-col>
               </ion-col>
 
-              <ion-img
-                style="width: 500px; height: 500px"
-                :src="product.img"
-              ></ion-img>
-
-              <ion-button color="success">Add to cart</ion-button>
-            </ion-grid>
-          </ion-item>
-        </ion-row>
+              <ion-col>
+                Preis: {{ product.price }} CHF
+                <ion-col>
+                  <ion-button color="success">Add to cart</ion-button>
+                </ion-col>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-page>
@@ -50,7 +53,6 @@ import {
 } from "@ionic/vue";
 //import { pin, walk, warning, wifi, wine } from "ionicons/icons";
 import { defineComponent } from "vue";
-import axios from "axios";
 import { useProducts } from "@/composables/useProducts";
 
 export default defineComponent({
