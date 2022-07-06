@@ -14,11 +14,16 @@
       <ion-list>
         <ion-item :key="user" v-for="user in users">
           <ion-grid>
-            <ion-row>
+            <ion-row :key="productInCart.id" v-for="productInCart in user.shoppingCart.products">
               <ion-col>
-                {{ user.shoppingCart }}
+                {{ productInCart.amount }}
               </ion-col>
-              <ion-col> </ion-col>
+              <ion-col>
+                {{ productInCart.product.name }}
+              </ion-col>
+              <ion-col>
+                {{ productInCart.product.price }}
+              </ion-col>
             </ion-row>
           </ion-grid>
         </ion-item>
@@ -59,7 +64,6 @@ export default defineComponent({
   },
   setup() {
     const { users } = useUsers();
-
     return { users };
   },
 });
