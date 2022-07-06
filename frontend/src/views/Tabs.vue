@@ -14,7 +14,7 @@
           <ion-label>Produkte</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="projects" href="/tabs/projects">
+        <ion-tab-button tab="projects" href="/tabs/cart">
           <ion-icon :icon="cart" />
           <ion-label>Cart</ion-label>
         </ion-tab-button>
