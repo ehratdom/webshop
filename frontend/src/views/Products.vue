@@ -43,6 +43,10 @@ import {
   IonItem,
   IonList,
   IonButton,
+  IonToolbar,
+  IonImg,
+  IonContent,
+  IonPage,
 } from "@ionic/vue";
 //import { pin, walk, warning, wifi, wine } from "ionicons/icons";
 import { defineComponent } from "vue";
@@ -60,37 +64,14 @@ export default defineComponent({
     IonItem,
     IonList,
     IonButton,
+    IonToolbar,
+    IonImg,
+    IonContent,
+    IonPage,
   },
   setup() {
-    //const { getProducts } = useProducts();
-    //return { getProducts };
-  },
-
-  data() {
-    return {
-      products: [],
-    };
-  },
-
-  mounted() {
-    this.getProducts();
-  },
-
-  methods: {
-    async getProducts() {
-      const config = {
-        withCredentials: true,
-      };
-      try {
-        const response = await axios.get(
-          "http://localhost:8080/api/products",
-          config
-        );
-        this.products = response.data;
-      } catch (error) {
-        return error;
-      }
-    },
+    const { products } = useProducts();
+    return { products };
   },
 });
 </script>
