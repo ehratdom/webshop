@@ -20,12 +20,9 @@
                 <ion-col>
                   <ion-img :src="product.img"></ion-img>
                 </ion-col>
-              </ion-col>
-
-              <ion-col>
-                Preis: {{ product.price }} CHF
                 <ion-col>
-                  <ion-button color="success">Add to cart</ion-button>
+                  CHF {{ product.price }}
+                  <ion-button float-right color="success">Add to cart</ion-button>
                 </ion-col>
               </ion-col>
             </ion-row>
