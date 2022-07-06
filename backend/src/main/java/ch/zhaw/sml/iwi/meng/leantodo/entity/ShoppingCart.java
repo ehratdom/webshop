@@ -17,10 +17,9 @@ public class ShoppingCart {
     private Long id;
 
     private String totalPrice;
-    private int amount;
 
-    @OneToMany
-    private List<Product> products = new ArrayList<>();
+    //@OneToMany
+    //private List<Product> products = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -38,20 +37,12 @@ public class ShoppingCart {
         this.totalPrice = totalPrice;
     }
 
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public List<Product> getProducts() {
+    /*public List<Product> getProducts() {
         return products;
     }
 
     public void setProducts(List<Product> products) {
         this.products = products;
-    }
+    }*/
     
 }
