@@ -11,6 +11,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import ch.zhaw.sml.iwi.meng.leantodo.entity.Product;
+import ch.zhaw.sml.iwi.meng.leantodo.entity.ProductRepository;
+import ch.zhaw.sml.iwi.meng.leantodo.entity.ShoppingCart;
+import ch.zhaw.sml.iwi.meng.leantodo.entity.ShoppingCartRepository;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.Role;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.RoleRepository;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.ToDo;
@@ -33,10 +37,15 @@ public class LeanToDo implements CommandLineRunner {
 
     @Autowired
     private RoleRepository roleRepository;
-
     
     @Autowired
     private ToDoRepository toDoRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
+    private ShoppingCartRepository shoppingCartRepository;
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -59,6 +68,11 @@ public class LeanToDo implements CommandLineRunner {
         User u = new User();
         u.setLoginName("user");
         u.setPasswordHash(new BCryptPasswordEncoder().encode("user"));
+
+        /*User u2 = new User();
+        u2.setLoginName("user2");
+        u2.setPasswordHash(new BCryptPasswordEncoder().encode("user2"));*/
+
         Role r = new Role();
         r.setRoleName("ROLE_USER");
         roleRepository.save(r);
@@ -74,5 +88,28 @@ public class LeanToDo implements CommandLineRunner {
         toDo.setTitle("Reply to student");
         toDo.setOwner("user");
         toDoRepository.save(toDo);
+
+        Product product = new Product();
+        product.setName("T-Shirt");
+        product.setDescription("langwiligs tshirt");
+        product.setPrice(25);
+        product.setImg("00003aeb-ace5-43bf-9a0c-dc31a03e9cd2.jpg");
+        productRepository.save(product);
+
+        product = new Product();
+        product.setName("Hoodie");
+        product.setDescription("langwilige hoodie");
+        product.setPrice(55);
+        product.setImg("000d31f6-44b5-4758-8d86-c4fcfb234392.jpg");
+        productRepository.save(product);
+
+        product = new Product();
+        product.setName("Polo");
+        product.setDescription("langwiligs Polo-Shirt");
+        product.setPrice(35);
+        product.setImg("001068a8-86c3-4029-a9d9-1e27015e7e64.jpg");
+        productRepository.save(product);
+
+
     }
 }
