@@ -3,6 +3,9 @@
     <ion-content :fullscreen="true" padding>
       <ion-grid>
         <ion-row justify-content-center>
+          <ion-col >
+
+          </ion-col>
           <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
             <div text-center>
               <h1>Fashionista login</h1>
@@ -28,6 +31,8 @@
                 >Login</ion-button
               >
             </div>
+          </ion-col>
+          <ion-col>
           </ion-col>
         </ion-row>
       </ion-grid>
