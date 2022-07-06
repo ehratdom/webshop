@@ -12,6 +12,8 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import ch.zhaw.sml.iwi.meng.leantodo.entity.Product;
+import ch.zhaw.sml.iwi.meng.leantodo.entity.ProductInCart;
+import ch.zhaw.sml.iwi.meng.leantodo.entity.ProductInCartRepository;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.ProductRepository;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.ShoppingCart;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.ShoppingCartRepository;
@@ -47,6 +49,9 @@ public class LeanToDo implements CommandLineRunner {
     @Autowired
     private ShoppingCartRepository shoppingCartRepository;
 
+    @Autowired
+    private ShoppingCartRepository productInCartRepository;
+
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
@@ -78,16 +83,6 @@ public class LeanToDo implements CommandLineRunner {
         roleRepository.save(r);
         u.getRoles().add(r);
         userRepository.save(u);
-
-        ToDo toDo = new ToDo();
-        toDo.setTitle("Finish This app");
-        toDo.setOwner("user");
-        toDoRepository.save(toDo);
-
-        toDo = new ToDo();
-        toDo.setTitle("Reply to student");
-        toDo.setOwner("user");
-        toDoRepository.save(toDo);
 
         Product product = new Product();
         product.setName("T-Shirt");

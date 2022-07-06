@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class ProductInCart {
@@ -14,6 +16,13 @@ public class ProductInCart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    
+    @ManyToOne
+    @JoinColumn(name = "p_id")
+    private Product product;
+
+    private Long shoppingCartFK;
 
     private int amount;
 
@@ -32,5 +41,21 @@ public class ProductInCart {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    public int getShoppingCartFK() {
+        return amount;
+    }
+
+    public void setShoppingCartFK(Long shoppingCartFK) {
+        this.shoppingCartFK = shoppingCartFK;
+    }
+
+    /*public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }*/
     
 }
