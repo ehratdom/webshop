@@ -50,11 +50,11 @@ public class ProductInCart {
         this.shoppingCartFK = shoppingCartFK;
     }
 
-    /*public Product getProduct() {
+    public Product getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
+    /*public void setProduct(Product product) {
         this.product = product;
     }*/
     
