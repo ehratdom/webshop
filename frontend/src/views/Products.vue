@@ -2,33 +2,34 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Produkte</ion-title>
+        <ion-title>Products</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Produkte</ion-title>
+          <ion-title size="large">Products</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-list>
-        <ion-item :key="product" v-for="product in products">
-          <ion-grid>
+      <ion-grid>
+        <ion-card :key="product" v-for="product in products">
+          <ion-img height="100px" width="100px" :src="product.img"></ion-img>
+          <ion-card-header>
             <ion-row>
               <ion-col>
-                {{ product.name }}
-                <ion-col>
-                  <ion-img :src="product.img"></ion-img>
-                </ion-col>
-                <ion-col>
-                  CHF {{ product.price }}
-                  <ion-button float-right color="success">Add to cart</ion-button>
-                </ion-col>
+                <ion-card-title>{{ product.name }}</ion-card-title>
+              </ion-col>
+              <ion-col>
+                <ion-button float-right color="success">Add to cart</ion-button>
               </ion-col>
             </ion-row>
-          </ion-grid>
-        </ion-item>
-      </ion-list>
+            <ion-card-subtitle>Price: {{ product.price }} </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            {{ product.description }}
+          </ion-card-content>
+        </ion-card>
+      </ion-grid>
     </ion-content>
   </ion-page>
 </template>
@@ -39,14 +40,17 @@ import {
   IonHeader,
   IonCol,
   IonRow,
-  IonGrid,
-  IonItem,
-  IonList,
+  IonCard,
+  IonCardContent,
+  IonCardSubtitle,
+  IonCardTitle,
   IonButton,
   IonToolbar,
   IonImg,
   IonContent,
   IonPage,
+  IonCardHeader,
+  IonGrid,
 } from "@ionic/vue";
 //import { pin, walk, warning, wifi, wine } from "ionicons/icons";
 import { defineComponent } from "vue";
@@ -59,14 +63,17 @@ export default defineComponent({
     IonHeader,
     IonCol,
     IonRow,
-    IonGrid,
-    IonItem,
-    IonList,
+    IonCard,
+    IonCardContent,
+    IonCardSubtitle,
+    IonCardTitle,
     IonButton,
     IonToolbar,
     IonImg,
     IonContent,
     IonPage,
+    IonCardHeader,
+    IonGrid,
   },
   setup() {
     const { products } = useProducts();
