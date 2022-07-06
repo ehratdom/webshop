@@ -30,4 +30,10 @@ public class UserEndpoint {
     public List<User> me(Principal principal) {
         return userController.listAllUsers();
     }
+
+    @RequestMapping(path = "/api/currentUser", method = RequestMethod.GET, produces = "application/json")
+    @PreAuthorize("isAuthenticated() AND hasRole('USER')")
+    public User currentUser(Principal principal) {
+        return userController.findById(principal.getName());
+    }
 }
