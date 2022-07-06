@@ -17,6 +17,6 @@ export function useProducts() {
     onMounted(getProducts);
 
     return {
-        getProducts
+        products
     }
 }

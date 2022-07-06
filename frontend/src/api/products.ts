@@ -8,8 +8,8 @@ export async function getAllProducts(): Promise <Product[]> {
     } 
     try {
         const response = await axios.get(API_ROOT + '/api/products', config);
+        console.log(response.data);
         return response.data;
-        console.log(response.data)
     } catch(error) {
         return <any>error;
     }
