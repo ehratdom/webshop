@@ -1,6 +1,7 @@
 package ch.zhaw.sml.iwi.meng.leantodo.boundary;
 
 import java.security.Principal;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,12 +33,16 @@ public class ProductInCartEndpoint {
     @Autowired
     private ProductController productController;
 
-    /*@RequestMapping(path = "/api/newitem/{id}", method = RequestMethod.POST)
+    @RequestMapping(path = "/api/newitem/{id}", method = RequestMethod.POST)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public void addItem(@RequestBody ProductInCart newProductInCart, Principal principal) {
-        Long productId = 5L;
-        Product addedProduct = productController.findById(productId);
-        productInCartController.addItem(newProductInCart, 10L, addedProduct, 1);
-    }*/
+    public void addItem(@RequestParam(name="id", required=false) Long productId, @RequestBody ProductInCart newProductInCart, Principal principal) {
+        //long productId3 = productId;
+        //Long productId2 = new Long(productId3);
+        productInCartController.addItem(newProductInCart, productId, 10L, 1);
+    }
+
+    /*@RequestMapping(path = "/api/deleteitem/{id}", method = RequestMethod.DELETE)
+    @PreAuthorize("isAuthenticated() AND hasRole('USER')")
+    public void deleteItem()*/
 
 }
