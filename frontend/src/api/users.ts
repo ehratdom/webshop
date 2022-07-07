@@ -29,3 +29,14 @@ export async function getSCfromUsers(): Promise <User[]> {
     }
 }
 
+export async function addNewProductInCart(NewProductInCart: User): Promise<any>   {
+    const config = {        
+        withCredentials: true
+    }
+    try {
+        const response = await axios.post(API_ROOT + '/api/newitem/{id}', NewProductInCart, config);
+        return response.data;
+    } catch (error) {
+        return error;   
+    }
+}
