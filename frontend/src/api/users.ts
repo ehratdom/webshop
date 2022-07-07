@@ -7,7 +7,7 @@ export async function getSCfromUser(): Promise <User[]> {
         withCredentials: true,
     } 
     try {
-        const response = await axios.get(API_ROOT + '/api/user', config);
+        const response = await axios.get(API_ROOT + '/api/users', config);
         console.log(response.data);
         return response.data;
     } catch(error) {
