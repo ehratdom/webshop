@@ -20,7 +20,10 @@
                 <ion-card-title>{{ product.name }}</ion-card-title>
               </ion-col>
               <ion-col>
-                <ion-button float-right color="success">Add to cart</ion-button>
+                <ion-button float-right color="success">
+                  <ion-icon :icon="cart" />
+                  <ion-label>Add to cart</ion-label>
+                </ion-button>
               </ion-col>
             </ion-row>
             <ion-card-subtitle>Price: {{ product.price }} </ion-card-subtitle>
@@ -51,8 +54,9 @@ import {
   IonPage,
   IonCardHeader,
   IonGrid,
+  IonIcon,
 } from "@ionic/vue";
-//import { pin, walk, warning, wifi, wine } from "ionicons/icons";
+import { cart } from "ionicons/icons";
 import { defineComponent } from "vue";
 import { useProducts } from "@/composables/useProducts";
 
@@ -74,10 +78,11 @@ export default defineComponent({
     IonPage,
     IonCardHeader,
     IonGrid,
+    IonIcon,
   },
   setup() {
     const { products } = useProducts();
-    return { products };
+    return { products, cart };
   },
 });
 </script>
