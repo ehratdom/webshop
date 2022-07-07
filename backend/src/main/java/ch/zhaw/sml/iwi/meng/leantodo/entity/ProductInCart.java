@@ -26,6 +26,11 @@ public class ProductInCart {
 
     private int amount;
 
+    /*public ProductInCart(Long shoppingCartFK) {
+        this.shoppingCartFK = shoppingCartFK;
+
+    }*/
+
     public Long getId() {
         return id;
     }
@@ -54,8 +59,8 @@ public class ProductInCart {
         return product;
     }
 
-    /*public void setProduct(Product product) {
+    public void setProduct(Product product) {
         this.product = product;
-    }*/
+    }
     
 }
