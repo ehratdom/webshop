@@ -15,29 +15,32 @@
         <ion-item :key="user" v-for="user in users">
           <ion-grid>
             <ion-row>
-              <ion-col>amount</ion-col>
-              <ion-col>product</ion-col>
-              <ion-col>
-                Sum
-              </ion-col>
+              <ion-col>Product-ID</ion-col>
+              <ion-col>Amount</ion-col>
+              <ion-col>Product</ion-col>
+              <ion-col>Price</ion-col>
             </ion-row>
             <ion-row
-              :key="productInCart.id"
+              :key="productInCart"
               v-for="productInCart in user.shoppingCart.products">
               <ion-col>
-                {{ productInCart.amount }}
+                {{ productInCart.product.id  }}
               </ion-col>
               <ion-col>
-                {{ productInCart.product.name }}
+                {{ productInCart.amount  }}
               </ion-col>
               <ion-col>
-                {{ productInCart.product.price }}
+                {{ productInCart.product.name  }}                
+              </ion-col>
+              <ion-col>
+               {{  productInCart.product.price  }}
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col> </ion-col>
               <ion-col> </ion-col>
-              <ion-col> Total: {{ user.shoppingCart.totalPrice }} </ion-col>
+              <ion-col> </ion-col>
+              <ion-col>Total: {{ user.shoppingCart.totalPrice }} </ion-col>
             </ion-row>
           </ion-grid>
         </ion-item>

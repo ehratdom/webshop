@@ -11,7 +11,7 @@
 
         <ion-tab-button tab="products" href="/tabs/products">
           <ion-icon :icon="shirt" />
-          <ion-label>Produkte</ion-label>
+          <ion-label>Products</ion-label>
         </ion-tab-button>
 
         <ion-tab-button tab="projects" href="/tabs/cart">
