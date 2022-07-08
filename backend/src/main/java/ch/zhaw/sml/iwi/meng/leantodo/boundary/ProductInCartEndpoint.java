@@ -47,5 +47,5 @@ public class ProductInCartEndpoint {
     public void deleteItem(@PathVariable Long id, /*@RequestBody ProductInCart productInCart, */Principal principal) {
         productInCartController.deleteItem(id);
     }
-
 }
+
