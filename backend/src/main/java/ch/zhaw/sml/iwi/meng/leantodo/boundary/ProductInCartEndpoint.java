@@ -36,10 +36,10 @@ public class ProductInCartEndpoint {
 
     @RequestMapping(path = "/api/newitem/{id}", method = RequestMethod.POST)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public void addItem(@PathVariable Long productId, @RequestBody ProductInCart newProductInCart, Principal principal) {
+    public void addItem(@PathVariable Long id, /*@RequestBody ProductInCart newProductInCart, */Principal principal) {
         //long productId3 = productId;
         //Long productId2 = new Long(productId3);
-        productInCartController.addItem(newProductInCart, productId, 10L, 1);
+        productInCartController.addItem(id, 10L, 1);
     }
 
     @RequestMapping(path = "/api/deleteitem/{id}", method = RequestMethod.DELETE)
