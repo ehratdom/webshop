@@ -22,25 +22,20 @@
             </ion-row>
             <ion-row
               :key="productInCart"
-              v-for="productInCart in user.shoppingCart.products">
+              v-for="productInCart in user.shoppingCart.products"
+            >
               <ion-col>
-                {{ productInCart.product.id  }}
+                {{productInCart.id}}
               </ion-col>
-              <ion-col>
-                {{ productInCart.amount  }}
-              </ion-col>
-              <ion-col>
-                {{ productInCart.product.name  }}                
-              </ion-col>
-              <ion-col>
-               {{  productInCart.product.price  }}
-              </ion-col>
+              <ion-col>{{ productInCart.product.name }} </ion-col>
+              <ion-col> {{ productInCart.amount }}</ion-col>
+              <ion-col> {{ productInCart.product.price }} </ion-col>
             </ion-row>
             <ion-row>
               <ion-col> </ion-col>
               <ion-col> </ion-col>
               <ion-col> </ion-col>
-              <ion-col>Total: {{ user.shoppingCart.totalPrice }} </ion-col>
+              <ion-col>Total: {{ user.shoppingCart.totalPrice }}</ion-col>
             </ion-row>
           </ion-grid>
         </ion-item>

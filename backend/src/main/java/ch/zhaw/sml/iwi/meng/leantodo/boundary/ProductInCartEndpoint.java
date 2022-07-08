@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,7 +36,7 @@ public class ProductInCartEndpoint {
 
     @RequestMapping(path = "/api/newitem/{id}", method = RequestMethod.POST)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public void addItem(@RequestParam(name="id", required=false) Long productId, @RequestBody ProductInCart newProductInCart, Principal principal) {
+    public void addItem(@PathVariable(name="id", required=false) Long productId, @RequestBody ProductInCart newProductInCart, Principal principal) {
         //long productId3 = productId;
         //Long productId2 = new Long(productId3);
         productInCartController.addItem(newProductInCart, productId, 10L, 1);
@@ -43,7 +44,7 @@ public class ProductInCartEndpoint {
 
     @RequestMapping(path = "/api/deleteitem/{id}", method = RequestMethod.DELETE)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public void deleteItem(@RequestParam(name="id", required=false) Long productInCartId, /*@RequestBody ProductInCart productInCart, */Principal principal) {
+    public void deleteItem(@PathVariable(name="id", required=false) Long productInCartId, /*@RequestBody ProductInCart productInCart, */Principal principal) {
         productInCartController.deleteItem(productInCartId);
     }
 
