@@ -29,7 +29,7 @@
               <ion-col>{{ productInCart.product.price }} CHF </ion-col>
               <ion-col>
                 <ion-button
-                  @click="deleteProductInCart(12)"
+                  @click="deleteProductInCart()"
                   float-right
                   color="danger"
                 >
@@ -64,10 +64,11 @@ import {
   IonItem,
   IonList,
   IonIcon,
+  IonButton,
+  IonLabel
 } from "@ionic/vue";
 import { defineComponent } from "vue";
 import { useUsers } from "@/composables/useUsers";
-import { useProductsinCart } from "@/composables/useProductsincart";
 import { cart } from "ionicons/icons";
 
 export default defineComponent({
@@ -84,10 +85,11 @@ export default defineComponent({
     IonItem,
     IonList,
     IonIcon,
+    IonButton,
+    IonLabel
   },
   setup() {
     const { users } = useUsers();
-    const { deleteProductInCart } = useProductsinCart();
     return { users, cart };
   },
 });

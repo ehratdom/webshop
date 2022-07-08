@@ -55,6 +55,7 @@ import {
   IonCardHeader,
   IonGrid,
   IonIcon,
+  IonLabel
 } from "@ionic/vue";
 import { cart } from "ionicons/icons";
 import { defineComponent } from "vue";
@@ -79,6 +80,7 @@ export default defineComponent({
     IonCardHeader,
     IonGrid,
     IonIcon,
+    IonLabel
   },
   setup() {
     const { products } = useProducts();
