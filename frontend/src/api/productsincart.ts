@@ -7,7 +7,7 @@ export async function deleteProductInCart(): Promise<ProductinCart[]> {
         withCredentials: true
     }
     try {
-        const response = await axios.get(API_ROOT + '/api/deleteitem/{}', config);
+        const response = await axios.delete(API_ROOT + '/api/deleteitem/12', config);
         return response.data;
     } catch (error) {
         return <any>error;   

@@ -1,7 +1,6 @@
 import { addNewProductInCart, getSCfromUser, getSCfromUsers } from '@/api/users';
 import { User } from '@/model/user';
 import { onMounted, ref } from 'vue';
-import { stringifyQuery } from 'vue-router';
 
 export function useUser() {
 

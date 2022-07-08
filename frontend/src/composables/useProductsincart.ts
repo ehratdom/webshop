@@ -3,11 +3,11 @@ import { ProductinCart } from '@/model/productincart';
 import { onMounted, ref } from 'vue';
 
 
-export function useProducts() {
+export function useProductsinCart() {
 
     const productincart = ref<ProductinCart[]>([]);
 
-    const getProducts = async () => {
+    const getProductsinCart = async () => {
         try {
             productincart.value = await deleteProductInCart();
         } catch (error) {
@@ -15,7 +15,7 @@ export function useProducts() {
         }
     }
 
-    onMounted(getProducts);
+    onMounted(getProductsinCart);
 
     return {
         deleteProductInCart
