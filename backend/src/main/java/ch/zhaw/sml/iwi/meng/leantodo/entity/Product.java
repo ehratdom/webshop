@@ -1,7 +1,5 @@
 package ch.zhaw.sml.iwi.meng.leantodo.entity;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;

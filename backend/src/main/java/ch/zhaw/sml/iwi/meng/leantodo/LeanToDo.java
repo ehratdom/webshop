@@ -11,16 +11,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import ch.zhaw.sml.iwi.meng.leantodo.entity.Product;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.ProductInCart;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.ProductInCartRepository;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.ProductRepository;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.ShoppingCart;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.ShoppingCartRepository;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.Role;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.RoleRepository;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.ToDo;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.ToDoRepository;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.User;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.UserRepository;
 
