@@ -15,32 +15,30 @@
         <ion-item :key="user" v-for="user in users">
           <ion-grid>
             <ion-row>
-              <ion-col>Product-ID</ion-col>
-              <ion-col>Amount</ion-col>
               <ion-col>Product</ion-col>
+              <ion-col>Amount</ion-col>
               <ion-col>Price</ion-col>
+              <ion-col></ion-col>
             </ion-row>
             <ion-row
               :key="productInCart"
-              v-for="productInCart in user.shoppingCart.products">
+              v-for="productInCart in user.shoppingCart.products"
+            >
+              <ion-col>{{ productInCart.product.name }} </ion-col>
+              <ion-col>{{ productInCart.amount }}</ion-col>
+              <ion-col>{{ productInCart.product.price }} CHF </ion-col>
               <ion-col>
-                {{ productInCart.product.id  }}
-              </ion-col>
-              <ion-col>
-                {{ productInCart.amount  }}
-              </ion-col>
-              <ion-col>
-                {{ productInCart.product.name  }}                
-              </ion-col>
-              <ion-col>
-               {{  productInCart.product.price  }}
+                <ion-button float-right color="danger">
+                  <ion-icon :icon="cart" />
+                  <ion-label>remove from cart</ion-label>
+                </ion-button>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col> </ion-col>
               <ion-col> </ion-col>
+              <ion-col>Total: {{ user.shoppingCart.totalPrice }} CHF</ion-col>
               <ion-col> </ion-col>
-              <ion-col>Total: {{ user.shoppingCart.totalPrice }} </ion-col>
             </ion-row>
           </ion-grid>
         </ion-item>
@@ -61,9 +59,11 @@ import {
   IonGrid,
   IonItem,
   IonList,
+  IonIcon,
 } from "@ionic/vue";
 import { defineComponent } from "vue";
 import { useUsers } from "@/composables/useUsers";
+import { cart } from "ionicons/icons";
 
 export default defineComponent({
   name: "Todo",
@@ -78,10 +78,11 @@ export default defineComponent({
     IonGrid,
     IonItem,
     IonList,
+    IonIcon,
   },
   setup() {
     const { users } = useUsers();
-    return { users };
+    return { users, cart };
   },
 });
 </script>
