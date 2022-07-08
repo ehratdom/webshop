@@ -24,8 +24,9 @@ public class ProductInCartController {
     @Autowired
     private ProductInCartRepository productInCartRepository;
 
-    public void addItem(ProductInCart newProductInCart, Long productId, Long shoppingCartId, int amount) {
+    public void addItem(Long productId, Long shoppingCartId, int amount) {
         Product product = productRepository.getById(productId);
+        ProductInCart newProductInCart = new ProductInCart();
         newProductInCart.setAmount(amount);
         newProductInCart.setShoppingCartFK(shoppingCartId);
         newProductInCart.setProduct(product);
