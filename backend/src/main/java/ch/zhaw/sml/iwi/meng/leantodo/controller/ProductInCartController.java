@@ -1,6 +1,10 @@
 package ch.zhaw.sml.iwi.meng.leantodo.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import ch.zhaw.sml.iwi.meng.leantodo.entity.Product;
@@ -26,5 +30,16 @@ public class ProductInCartController {
         newProductInCart.setShoppingCartFK(shoppingCartId);
         newProductInCart.setProduct(product);
         productInCartRepository.save(newProductInCart);
+    }
+
+    public ResponseEntity<ProductInCart> deleteItem(Long productInCartId) {
+        Optional<ProductInCart> productInCart = productInCartRepository.findById(productInCartId);
+        if (productInCart.isPresent()) {
+            productInCartRepository.deleteById(productInCartId);
+            return new ResponseEntity<ProductInCart>(HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity<ProductInCart>(HttpStatus.NOT_FOUND);
+        }
     }
 }

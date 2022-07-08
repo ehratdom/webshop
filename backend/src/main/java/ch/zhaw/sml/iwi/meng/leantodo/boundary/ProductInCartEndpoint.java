@@ -41,8 +41,10 @@ public class ProductInCartEndpoint {
         productInCartController.addItem(newProductInCart, productId, 10L, 1);
     }
 
-    /*@RequestMapping(path = "/api/deleteitem/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/api/deleteitem/{id}", method = RequestMethod.DELETE)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public void deleteItem()*/
+    public void deleteItem(@RequestParam(name="id", required=false) Long productInCartId, /*@RequestBody ProductInCart productInCart, */Principal principal) {
+        productInCartController.deleteItem(productInCartId);
+    }
 
 }
