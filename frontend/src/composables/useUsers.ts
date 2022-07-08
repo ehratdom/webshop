@@ -1,6 +1,7 @@
-import { getSCfromUser, getSCfromUsers } from '@/api/users';
+import { addNewProductInCart, getSCfromUser, getSCfromUsers } from '@/api/users';
 import { User } from '@/model/user';
 import { onMounted, ref } from 'vue';
+import { stringifyQuery } from 'vue-router';
 
 export function useUser() {
 
@@ -39,3 +40,27 @@ export function useUsers() {
         users
     }
 }
+
+export function addProductInCart() {
+
+    const users = ref<User[]>([]);
+
+    const NewProductInCart = ref<User>({loginName:"user", shoppingCart:"10"});
+
+    const getUsers = async () => {
+        try {
+            // add the new todo and update the list of all todos afterwards
+            await addNewProductInCart(NewProductInCart.value);
+            getUsers();
+        } catch (error) {
+            console.log(error); // FIXME: Errorhandling
+        }
+    }
+
+    onMounted(getUsers);
+
+    return {
+        users
+    }
+}
+
