@@ -1,7 +1,5 @@
 package ch.zhaw.sml.iwi.meng.leantodo.entity;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,10 +24,6 @@ public class ProductInCart {
 
     private int amount;
 
-    /*public ProductInCart(Long shoppingCartFK) {
-        this.shoppingCartFK = shoppingCartFK;
-
-    }*/
 
     public Long getId() {
         return id;
@@ -47,10 +41,6 @@ public class ProductInCart {
         this.amount = amount;
     }
 
-    public int getShoppingCartFK() {
-        return amount;
-    }
-
     public void setShoppingCartFK(Long shoppingCartFK) {
         this.shoppingCartFK = shoppingCartFK;
     }
@@ -61,6 +51,10 @@ public class ProductInCart {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public Long getShoppingCartFK() {
+        return shoppingCartFK;
     }
     
 }
