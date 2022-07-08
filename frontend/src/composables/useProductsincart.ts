@@ -4,14 +4,15 @@ import { onMounted, ref } from 'vue';
 
 
 export function useProductsInCart() {
-    let id: number;
+
+    
 
     const productincart = ref<ProductinCart[]>([]);
-
+    const id = 0;
     
     const getProductsInCart = async () => {
         try {
-            await deleteProductInCart(id);
+            productincart.value = await deleteProductInCart(id);
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
