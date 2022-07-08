@@ -70,9 +70,9 @@ import {
 import { defineComponent } from "vue";
 import { useUsers } from "@/composables/useUsers";
 import { cart } from "ionicons/icons";
-
+import { useProductsInCart } from "@/composables/useProductsIncart"
 export default defineComponent({
-  name: "Todo",
+  name: "ProductInCart",
   components: {
     IonHeader,
     IonToolbar,
@@ -90,6 +90,7 @@ export default defineComponent({
   },
   setup() {
     const { users } = useUsers();
+    const { deleteProductInCart } = useProductsInCart();
     return { users, cart };
   },
 });

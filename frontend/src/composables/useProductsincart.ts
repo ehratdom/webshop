@@ -3,19 +3,21 @@ import { ProductinCart } from '@/model/productincart';
 import { onMounted, ref } from 'vue';
 
 
-export function useProductsinCart() {
+export function useProductsInCart() {
+    let id: number;
 
     const productincart = ref<ProductinCart[]>([]);
 
-    const getProductsinCart = async () => {
+    
+    const getProductsInCart = async () => {
         try {
-            productincart.value = await deleteProductInCart();
+            await deleteProductInCart(id);
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
     }
 
-    onMounted(getProductsinCart);
+    onMounted(getProductsInCart);
 
     return {
         deleteProductInCart
