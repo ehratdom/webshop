@@ -34,15 +34,13 @@
                   color="danger"
                 >
                   <ion-icon :icon="cart" />
-                  <ion-label>remove from cart</ion-label>
+                  <ion-label>Remove</ion-label>
                 </ion-button>
               </ion-col>
             </ion-row>
             <ion-row>
-              <ion-col> </ion-col>
-              <ion-col> </ion-col>
-              <ion-col>Total: {{ user.shoppingCart.totalPrice }} CHF</ion-col>
-              <ion-col> </ion-col>
+              <ion-col>Total: </ion-col>
+              <ion-col>{{ user.shoppingCart.totalPrice }} CHF</ion-col>
             </ion-row>
           </ion-grid>
         </ion-item>
