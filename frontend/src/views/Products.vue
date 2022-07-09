@@ -26,7 +26,7 @@
                 </ion-button>
               </ion-col>
             </ion-row>
-            <ion-card-subtitle>Price: {{ product.price }} </ion-card-subtitle>
+            <ion-card-subtitle>Price: {{ product.price }} CHF</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
             {{ product.description }}
